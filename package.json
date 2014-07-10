@@ -1,0 +1,17 @@
+{
+  "name": "cloudlink",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bin/cloudlink.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "celeri": "^0.3.3",
+    "cli-table": "^0.3.0",
+    "nomnom": "^1.8.0",
+    "request": "^2.36.0"
+  }
+}

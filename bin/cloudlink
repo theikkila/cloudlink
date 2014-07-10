@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+
+
+var parser = require("nomnom");
+
+var config = require('../lib/config');
+
+var link = require('../lib/link');
+var list = require('../lib/list');
+
+parser.script("cloudlink")
+
+parser.command('link')
+	.options({
+				container_id: {
+					position: 1,
+					help: "ID of container to connect",
+					required: true
+				},
+				port: {
+					abbr: 'p',
+					help: "Remote port",
+					default: 22
+				},
+				host: {
+					abbr: 'h',
+					help: "Remote host",
+					default: config.HOST
+				},
+				username: {
+					abbr: 'u',
+					help: "Remote username",
+					default: config.USERNAME
+				}
+			})
+.callback(function(opts){
+	link(opts.container_id, opts);
+}).help('Establish ssh tunnel to container');
+
+
+parser.command('list').callback(function(opts){
+	list();
+}).help('List containers');
+
+
+parser.parse();
