@@ -13,7 +13,7 @@ Dependecies:
 
 ## How to run?
 1. Configure cloudlink at `lib/config.js`
-2. `chmod +x bin/cloudlink'
+2. `chmod +x bin/cloudlink`
 3. Link to PATH or do what you want to
 
 
